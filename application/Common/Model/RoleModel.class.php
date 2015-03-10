@@ -11,7 +11,7 @@ class RoleModel extends CommonModel{
 	
 	protected $_auto = array(
 		array('create_time','time',1,'function'),
-		array('update_time','time',3,'function')
+		array('update_time','time',3,'function')	//添加和修改时都自动赋值，防止数据库字段中没有默认值。
 	);
 	
 	protected function _before_write(&$data) {
