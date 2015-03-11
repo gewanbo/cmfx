@@ -15,6 +15,12 @@ class UsersModel extends CommonModel
 			array('user_email','email','邮箱格式不正确！',0,'',CommonModel:: MODEL_BOTH ), // 验证user_email字段格式是否正确
 	);
 	
+	protected $_auto = array(
+		array('last_login_ip', '', 1 ),
+		array('last_login_time', 'date', 1, 'function', 'Y-m-d H:i:s'),
+		array('create_time', 'date', 1, 'function', 'Y-m-d H:i:s')
+	);
+	
 	//用于获取时间，格式为2012-02-03 12:12:12,注意,方法不能为private
 	function mGetDate() {
 		return date('Y-m-d H:i:s');
